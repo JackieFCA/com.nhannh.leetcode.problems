@@ -3,18 +3,17 @@ package problems.test.easy.twosum;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import problems.easy.twosum.TwoSumWith2Loops;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-import problems.easy.twosum.TwoSum;
-
-public class TwoSumTest {
-    private TwoSum problem;
+public class TwoSumWith2LoopsTest {
+    private TwoSumWith2Loops problem;
 
     @Before
     public void setup() {
-        problem = new TwoSum();
+        problem = new TwoSumWith2Loops();
     }
 
     @After
@@ -41,6 +40,16 @@ public class TwoSumTest {
     @Test
     public void invalidConstraintCase4() {
         assertNull(problem.twoSum(new int[]{1, 2}, (int) Math.pow(10, 10)));
+    }
+
+    @Test
+    public void invalidConstraintCase5() {
+        assertNull(problem.twoSum(new int[] {2, (int) Math.pow(10, -10)}, 9));
+    }
+
+    @Test
+    public void invalidConstraintCase6() {
+        assertNull(problem.twoSum(new int[] {2, (int) Math.pow(10, 10)}, 9));
     }
 
     @Test
