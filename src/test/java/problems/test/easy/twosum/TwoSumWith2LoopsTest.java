@@ -6,7 +6,6 @@ import org.junit.Test;
 import problems.easy.twosum.TwoSumWith2Loops;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
 public class TwoSumWith2LoopsTest {
     private TwoSumWith2Loops problem;
@@ -23,33 +22,33 @@ public class TwoSumWith2LoopsTest {
 
     @Test
     public void invalidConstraintCase1() {
-        assertNull(problem.twoSum(new int[]{1}, 9));
+        assertEquals(0, problem.twoSum(new int[]{1}, 9).length);
     }
 
     @Test
     public void invalidConstraintCase2() {
         int[] expectedArray = new int[Integer.valueOf((int) (Math.pow(10, 4) + 1))];
-        assertNull(problem.twoSum(expectedArray, 9));
+        assertEquals(0, problem.twoSum(expectedArray, 9).length);
     }
 
     @Test
     public void invalidConstraintCase3() {
-        assertNull(problem.twoSum(new int[]{1, 2}, (int) Math.pow(10, -10)));
+        assertEquals(0, problem.twoSum(new int[]{1, 2}, (int) Math.pow(10, -10)).length);
     }
 
     @Test
     public void invalidConstraintCase4() {
-        assertNull(problem.twoSum(new int[]{1, 2}, (int) Math.pow(10, 10)));
+        assertEquals(0, problem.twoSum(new int[]{1, 2}, (int) Math.pow(10, 10)).length);
     }
 
     @Test
     public void invalidConstraintCase5() {
-        assertNull(problem.twoSum(new int[] {2, (int) Math.pow(10, -10)}, 9));
+        assertEquals(0, problem.twoSum(new int[]{2, (int) Math.pow(10, -10)}, 9).length);
     }
 
     @Test
     public void invalidConstraintCase6() {
-        assertNull(problem.twoSum(new int[] {2, (int) Math.pow(10, 10)}, 9));
+        assertEquals(0, problem.twoSum(new int[]{2, (int) Math.pow(10, 10)}, 9).length);
     }
 
     @Test
