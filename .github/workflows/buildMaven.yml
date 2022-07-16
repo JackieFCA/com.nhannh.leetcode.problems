@@ -58,3 +58,22 @@ jobs:
         run: |
           mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
             -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }} -Pcoverage
+
+  test-result:
+    name: Test report
+    needs:
+      - build
+      - sonar
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout git repository
+        uses: actions/checkout@v3
+      - name: Run maven unit test
+        run: mvn test
+      - name: Unit test results
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Unit Test Results
+          path: "**/surefire-reports/*.xml"
+          reporter: java-junit
