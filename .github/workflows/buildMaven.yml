@@ -26,7 +26,7 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
     - name: Coverage per Test Execution
-      run: mvn org.jacoco:jacoco-maven-plugin:prepare-agent install -Pcoverage
+      run: mvn clean verify sonar:sonar
 
   sonar:
     name: SonarQube
