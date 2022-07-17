@@ -37,7 +37,7 @@ public class TwoSumSolution {
                 }
 
                 if (nums[j] == target - nums[i]) {
-                    return new int[] {i, j};
+                    return new int[]{i, j};
                 }
             }
         }
@@ -45,7 +45,7 @@ public class TwoSumSolution {
     }
 
     private boolean validate(int[] nums, int target) {
-        return (nums.length < 2 || nums.length > Math.pow(10, 4)
-                || target < Math.pow(10, -9) || target > Math.pow(10, 9)) ? true : false;
+        return nums.length < 2 || nums.length > Math.pow(10, 4)
+                || target < Math.pow(10, -9) || target > Math.pow(10, 9);
     }
 }
