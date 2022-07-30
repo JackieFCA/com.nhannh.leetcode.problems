@@ -6,9 +6,10 @@ import java.util.Map;
 public class RomanToInteger {
     public int romanToInt(String s) {
         Map<Character, Integer> values = generateMapValue();
-        Integer valueAtPreviousPosition = values.get(s.charAt(s.length() - 1));
-        Integer output = valueAtPreviousPosition;
+        Integer output = 0;
         if (this.isValidInput(s)) {
+            Integer valueAtPreviousPosition = values.get(s.charAt(s.length() - 1));
+            output = valueAtPreviousPosition;
             for (int i = s.length() - 2; i >= 0; i--) {
                 Integer valueAtCurrentPosition = values.get(s.charAt(i));
                 if (valueAtPreviousPosition > valueAtCurrentPosition) {

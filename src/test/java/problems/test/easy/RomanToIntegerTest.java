@@ -46,8 +46,13 @@ public class RomanToIntegerTest {
     }
 
     @Test
-    public void testInvalidOutput() {
+    public void testOutputIs4000() {
         assertFalse(solution.isValidOutput(4000));
+    }
+
+    @Test
+    public void testOutputIs0() {
+        assertFalse(solution.isValidOutput(0));
     }
 
     @Test
@@ -73,5 +78,10 @@ public class RomanToIntegerTest {
     @Test
     public void testOutputIs1() {
         assertEquals(1, solution.romanToInt("I"));
+    }
+
+    @Test
+    public void testOutputIsMinus1() {
+        assertEquals(-1, solution.romanToInt("A"));
     }
 }
