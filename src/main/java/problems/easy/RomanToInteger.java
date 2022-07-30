@@ -2,7 +2,6 @@ package problems.easy;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 public class RomanToInteger {
     public int romanToInt(String s) {
@@ -24,10 +23,7 @@ public class RomanToInteger {
     }
 
     public boolean isValidInput(String input) {
-        if (input.length() <= 0 || input.length() > 15) {
-            return false;
-        }
-        if (!input.matches("[IVXLCDM]+")) {
+        if (input.length() <= 0 || input.length() > 15 || !input.matches("[IVXLCDM]+")) {
             return false;
         }
         return true;
