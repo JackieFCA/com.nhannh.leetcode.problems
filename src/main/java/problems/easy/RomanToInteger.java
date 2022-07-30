@@ -23,10 +23,7 @@ public class RomanToInteger {
     }
 
     public boolean isValidInput(String input) {
-        if (input.length() <= 0 || input.length() > 15 || !input.matches("[IVXLCDM]+")) {
-            return false;
-        }
-        return true;
+        return !(input.length() <= 0 || input.length() > 15 || !input.matches("[IVXLCDM]+"));
     }
 
     public boolean isValidOutput(Integer output) {
